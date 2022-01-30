@@ -1,5 +1,4 @@
-# personalprojects
- for boring Sundays
+# personalprojects for boring Sundays
 
 botmank is a discord bot that responds to messages starting with "mank"
 
