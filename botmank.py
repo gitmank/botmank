@@ -36,4 +36,15 @@ async def on_message(message):
         choice = int(random.choice(list1))
         await message.channel.send(url[choice])
 
+    if message.content.startswith("mank joke"):
+        reddit = praw.Reddit(client_id=os.getenv("REDDITID"),
+                             client_secret=os.getenv("REDDITPASS"),
+                             user_agent="botmank")
+        url = []
+        for submission in reddit.subreddit("jokes").hot(limit=100):
+            url.append(submission.url)
+        list1 = range(1, 100, 1)
+        choice = int(random.choice(list1))
+        await message.channel.send(url[choice])
+        
 client.run(os.getenv("TOKEN"))
