@@ -45,11 +45,11 @@ async def on_message(message):
         client_id = os.getenv("PRAWID"),
         client_secret=os.getenv("PRAWPASS"),
         user_agent="botmank")
-        url = []
+        jokes = []
         for submission in reddit.subreddit("jokes").hot(limit=100):
-            url.append(submission.title+submission.selftext)
+            jokes.append(submission.title+submission.selftext)
         list1 = range(1, 100, 1)
         choice = int(random.choice(list1))
-        await message.channel.send(url[choice])
+        await message.channel.send(jokes[choice])
 
 client.run(os.getenv("TOKEN"))
