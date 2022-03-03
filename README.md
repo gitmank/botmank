@@ -12,4 +12,4 @@ joke - sends a lame joke from r/jokes hot 100
 
 help - shows intro and menu
 
-mail <toMailID> - send an email to specified email ID
+mail <toMailID> - sends an email to specified email ID
