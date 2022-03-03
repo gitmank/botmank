@@ -2,25 +2,36 @@ import discord
 import praw
 import random
 import os
+import smtplib
 
-client = discord.Client()
+discordClient = discord.Client()
 
-
-@client.event
+@discordClient.event
 async def on_ready():
-    print("{0.user} is on duty!".format(client))
+    print("{0.user} is on duty!".format(discordClient))
 
 
-@client.event
+@discordClient.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == discordClient.user:
         return
 
     if message.content.startswith("mank hello"):
         await message.channel.send("heyy")
 
-    if message.content.startswith("mank fuckoff"):
-        await message.channel.send("you fuckoff!")
+    if message.content.startswith("mank mail"):
+        msg = message.content
+        indexOfAt = int(msg.index("@"))
+        indexOfMailID = 0
+        for i in range(indexOfAt,0, -1):
+            if msg[i] == " ":
+                indexOfMailID = i
+                break
+        mailID = msg[indexOfMailID:(len(msg))]
+        server = smtplib.SMTP_SSL("smtp.gmail.com")
+        server.login("danteramone76@gmail.com", os.getenv("GMAILPASS"))
+        server.sendmail("danteramone76@gmail.com", mailID, "botmank sent you an email!")
+        await message.channel.send("Done!")
 
     if message.content.startswith("mank ping"):
         await message.channel.send("pong! I'm awake")
@@ -52,4 +63,4 @@ async def on_message(message):
         choice = int(random.choice(list1))
         await message.channel.send(jokes[choice])
 
-client.run(os.getenv("TOKEN"))
+discordClient.run(os.getenv("TOKEN"))
