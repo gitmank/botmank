@@ -37,7 +37,7 @@ async def on_message(message):
         await message.channel.send("pong! I'm awake")
 
     if message.content.startswith("mank help"):
-      await message.channel.send("botmank is a discord bot that responds to messages starting with mank. I'll be gradually adding music, role management, quirky replies and other functionality. It has these basic commands right now -\n\t**ping** - responds if online\n\t**hello** - responds with heyy\n\t**meme** - sends a random meme from r/memes hot 100\n\t**joke** - sends a lame joke from r/jokes hot 100")
+      await message.channel.send("botmank is a discord bot that responds to messages starting with mank. I'll be gradually adding music, role management, quirky replies and other functionality. It has these basic commands right now -\n\t**ping** - responds if online\n\t**hello** - responds with heyy\n\t**meme** - sends a random meme from r/memes hot 100\n\t**joke** - sends a lame joke from r/jokes hot 100\n\t**mail <toMailID>** - sends email to mentioned mailID, yet to add contents 😅")
 
     if message.content.startswith("mank meme"):
         reddit = praw.Reddit(

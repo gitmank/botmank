@@ -11,3 +11,5 @@ meme  - sends a random meme from r/memes hot 100
 joke - sends a lame joke from r/jokes hot 100
 
 help - shows intro and menu
+
+mail <toMailID> - send an email to specified email ID
