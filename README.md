@@ -1,15 +1,17 @@
 # botmank - a discord bot
 
-botmank is a discord bot that responds to messages starting with "mank". I'll be gradually adding music, role management, quirky replies and other functionality. It has these basic commands right now -
+botmank is a discord bot that uses the PythonRreddit API Wrapper (PRAW).
 
-ping  - responds if online
+responds to messages starting with __```mank```__. I hope to add music, role management, quirky replies and other functionality. It has these basic commands right now -
 
-hello - responds with heyy
+```mank ping```  - ping test
 
-meme  - sends a random meme from r/memes hot 100
+```mank hello``` - responds with heyy
 
-joke - sends a lame joke from r/jokes hot 100
+```mank meme```  - sends a random meme from r/memes hot 100
 
-help - shows intro and menu
+```mank joke``` - sends a lame joke from r/jokes hot 100
 
-mail <toMailID> - sends an email to specified email ID
+```mank help``` - shows intro and menu
+
+```mank mail``` <toMailID> - sends an email to specified email ID
